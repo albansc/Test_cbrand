@@ -9,8 +9,9 @@ block content
         div.response-wrapper
           p.response(ng-show="def.sending === 1") Pensando...
           p.response(ng-show="def.sending === 0")
-            span
-              strong Esencia ({{def.responseConfidence}}%): 
+            //
+              span
+              	strong Esencia ({{def.responseConfidence}}%): 
             span(ng-bind-html="def.response")
         div.logo
           img(src="images/logo.svg", width="300")
@@ -22,6 +23,7 @@ block content
           p Enviando...
         div(ng-show="def.sending === 2")
           p(ng-click="def.sending=0") ¡Ups! Ha ocurrido un problema... Da clic aquí para reintentar
+  //
     button(ng-click="admin=!admin") Consola administrativa
     div.admin(ng-show="admin")
       h2 Admin Screen
