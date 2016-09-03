@@ -1,0 +1,27 @@
+{
+  "name": "esencia",
+  "description": "Esencia Costa Rica",
+  "main": "",
+  "authors": [
+    "Walter Montes"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "esencia",
+    "cognitiva",
+    "lantern"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "font-awesome": "^4.6.3"
+  }
+}

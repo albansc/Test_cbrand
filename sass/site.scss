@@ -1,0 +1,67 @@
+.content{
+    max-width:960px;
+    margin:6px auto;
+
+
+    .esencia{
+        text-align: center;
+    }
+
+    .response-wrapper{
+        background:#63A70A;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 24px;
+        margin:24px;
+        min-height:200px;
+        p{
+            color:#fff;
+            font-size:14px;
+        }
+    }
+
+    .question-wrapper{
+        background:#63A70A;
+        padding: 24px;
+        margin:24px;
+        border-radius: 8px;
+        margin:48px;
+        form{
+            margin:0;
+        }
+        input, p{
+            background:transparent;
+            border:none;
+            width:100%;
+            font-size:24px;
+            color:#fff;
+
+            &:hover,&:active, &:focus{
+                border:none;
+                outline:none;
+            }
+        }
+    }
+
+    div.logo {
+        text-align:center;
+        img{
+            margin:25 auto 0;
+        }
+    }
+} 
+.footer{
+    position:fixed;
+    bottom:4px;
+    right:4px;
+    text-align: right;
+}
+
+
+
+
+// text area fixes
+
+div.content.ng-scope > div.admin  div.ta-scroll-window.ng-scope.ta-text.ta-editor.form-control{
+    height:auto;
+}

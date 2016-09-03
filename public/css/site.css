@@ -1,0 +1,45 @@
+.content {
+  max-width: 960px;
+  margin: 6px auto; }
+  .content .esencia {
+    text-align: center; }
+  .content .response-wrapper {
+    background: #63A70A;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 24px;
+    margin: 24px;
+    min-height: 200px; }
+    .content .response-wrapper p {
+      color: #fff;
+      font-size: 14px; }
+  .content .question-wrapper {
+    background: #63A70A;
+    padding: 24px;
+    margin: 24px;
+    border-radius: 8px;
+    margin: 48px; }
+    .content .question-wrapper form {
+      margin: 0; }
+    .content .question-wrapper input, .content .question-wrapper p {
+      background: transparent;
+      border: none;
+      width: 100%;
+      font-size: 24px;
+      color: #fff; }
+      .content .question-wrapper input:hover, .content .question-wrapper input:active, .content .question-wrapper input:focus, .content .question-wrapper p:hover, .content .question-wrapper p:active, .content .question-wrapper p:focus {
+        border: none;
+        outline: none; }
+  .content div.logo {
+    text-align: center; }
+    .content div.logo img {
+      margin: 25 auto 0; }
+
+.footer {
+  position: fixed;
+  bottom: 4px;
+  right: 4px;
+  text-align: right; }
+
+div.content.ng-scope > div.admin div.ta-scroll-window.ng-scope.ta-text.ta-editor.form-control {
+  height: auto; }

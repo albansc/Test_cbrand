@@ -1,0 +1,11 @@
+{
+    "NLC":{
+        "username":"96ade452-52aa-4b75-9113-d13cb18df86d",
+        "password":"bPtHi7s77wja",
+        "classifierId":"34175ex88-nlc-1398"
+    },
+    "Cloudant":{
+        "username":"fdcf8d99-5cf7-42f1-bfbb-c0decf61bea6-bluemix",
+        "password":"269c622c556f49aa3732b9ef46cb48b56d5e380268fb32d522d50831f5fa71fb"
+    }
+}

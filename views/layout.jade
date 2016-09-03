@@ -1,0 +1,28 @@
+html(lang='en')
+  head
+    title Esencia, Costa Rica
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='og:title' content='Esencia')
+    meta(name='og:description' content='Esencial Costa Rica')
+    link(rel='icon', href='/images/favicon.ico', type='image/x-icon')
+    
+    script(src='/angular/angular.min.js')
+    script(src='/js/vendors/textAngular-rangy.min.js')
+    script(src='/js/vendors/textAngular-sanitize.min.js')
+    script(src='/js/vendors/textAngular.min.js')
+    script(src='/js/app/app.module.js')
+    script(src='/js/app/default.controller.js')
+     
+  body(ng-app='esencia')
+    block content
+    div
+      include ./includes/footer.jade
+    
+    link(rel='stylesheet', href='css/site.css')
+    script(src='js/vendors/browser-detect.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.0/js.cookie.min.js')
+    link(rel='stylesheet', href='/font-awesome/css/font-awesome.css')
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet")
