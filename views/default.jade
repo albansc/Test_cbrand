@@ -22,8 +22,7 @@ block content
         div(ng-show="def.sending === 1")
           p Enviando...
         div(ng-show="def.sending === 2")
-          p(ng-click="def.sending=0") ¡Ups! Ha ocurrido un problema... Da clic aquí para reintentar
-  //
+          p(ng-click="def.sending=0") ¡Ups! Ha ocurrido un problema... Da clic aquí para reintentar.
     button(ng-click="admin=!admin") Consola administrativa
     div.admin(ng-show="admin")
       h2 Admin Screen
