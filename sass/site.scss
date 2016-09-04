@@ -1,10 +1,18 @@
 .content{
     max-width:960px;
     margin:6px auto;
-	background-image: url('/public/images/background.png') no-repeat center center fixed
+	background: url('/public/images/background.png') no-repeat center center fixed
 	
 	.body {
-	background-image: url('/public/images/background.png') no-repeat center center fixed
+	background: url('/public/images/background.png') no-repeat center center fixed
+	}
+	
+	html { 
+	background: url('/public/images/background.png') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	}
 	
     .esencia{
