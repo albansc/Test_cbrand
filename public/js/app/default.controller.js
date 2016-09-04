@@ -6,7 +6,7 @@
         var vm = this;
         vm.options = [];
         vm.sending = 0;
-        vm.response = '¡Hola! Soy Esencia, estoy para responder tus dudas de Esencial Costa Rica.';
+        vm.response = '¡Hola! Soy Esencia, estoy para responder tus dudas sobre Esencial Costa Rica. Puedo responderle sobre la historia, descripción, usos, licencimiento y estructura organizacional de la marca país.';
 
         vm.classify = classifyText;
         vm.add = addItem;
@@ -63,7 +63,7 @@
                     console.log(res.data);
                     if (res.data.classes[0].confidence < 0.49) {
                         // not so sure
-                        vm.response = 'No entendí tu pregunta...';
+                        vm.response = 'Disculpe,No entendí su pregunta. ¿Podría redactarla distinto? Si es una pregunta muy específica, puedo sugerirle escribir a uno de nuestros asesores al correo marcapais@procomer.com﻿';
                         vm.responseConfidence = 0;
                     } else {
                         // quite sure
@@ -77,7 +77,7 @@
 
                         }, function (err) {
                             //console.log('respuesta no encontrada');
-                            vm.response = 'No tengo la información para contestar esa pregunta...';
+                            vm.response = 'No tengo la información para contestar esa pregunta. Si es una pregunta muy específica, puedo sugerirle escribir a uno de nuestros asesores al correo marcapais@procomer.com';
                             vm.sending = 2;
                             vm.text = '';
                         })
