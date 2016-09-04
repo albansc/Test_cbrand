@@ -36,11 +36,11 @@
       background: transparent;
       border: none;
       width: 100%;
-      font-size: 24px;
+      font-size: 40px;
       color: #fff; }
       .content .question-wrapper input:hover, .content .question-wrapper input:active, .content .question-wrapper input:focus, .content .question-wrapper p:hover, .content .question-wrapper p:active, .content .question-wrapper p:focus {
-        border: #fff;
-        outline: none; }
+        border: 1px;
+        outline: #fff; }
   .content div.logo {
     text-align: center; }
     .content div.logo img {
