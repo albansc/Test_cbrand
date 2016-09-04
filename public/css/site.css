@@ -1,7 +1,6 @@
 .content {
   max-width: 960px;
-  margin: 6px auto; 
-  background: url('/images/back_green.png') no-repeat center center fixed}
+  margin: 6px auto; }
   
   body {
     background: url("/images/back_green.png") no-repeat center center fixed;
@@ -20,7 +19,7 @@
     margin: 0 auto;
     padding: 24px;
     margin: 48px;
-    min-height: 200px; }
+    min-height: 400px; }
     .content .response-wrapper p {
       color: #fff;
       font-size: 14px; }
@@ -28,7 +27,7 @@
     background: #63A70A;
     padding: 24px;
     margin: 24px;
-    border-radius: 0px;
+    border-radius: 0;
     margin: 48px; }
     .content .question-wrapper form {
       margin: 0; }
