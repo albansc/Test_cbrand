@@ -2,10 +2,6 @@
   max-width: 960px;
   margin: 6px auto; 
   background: url('/images/background.png') no-repeat center center fixed}
-  body {
-    background-image: url("/images/background.png");
-}
-  
   .content .esencia {
     text-align: center; }
   .content .response-wrapper {
