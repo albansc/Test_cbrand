@@ -8,7 +8,7 @@ block content
     div.row
       div.col.col-sm-12.question-wrapper
         form(ng-show="def.sending === 0", ng-submit="def.classify()")
-          input.question#question(ng-model="def.text",placeholder="¡Pregúntale a Esencia!")
+          input.question#question(ng-model="def.text",placeholder="¡Pregúntele a Esencia!")
         div(ng-show="def.sending === 1")
           p Enviando...
         div(ng-show="def.sending === 2")
@@ -28,10 +28,8 @@ block content
         //
           div.logo
           img(src="images/logo.svg", width="300")
-          
-   
-   
-   button(ng-click="admin=!admin") Consola administrativa
+           
+    button(ng-click="admin=!admin") Consola administrativa
     div.admin(ng-show="admin")
       h2 Admin Screen
       table.table

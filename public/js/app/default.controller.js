@@ -63,7 +63,7 @@
                     console.log(res.data);
                     if (res.data.classes[0].confidence < 0.49) {
                         // not so sure
-                        vm.response = 'Disculpe,No entendí su pregunta. ¿Podría redactarla distinto? Si es una pregunta muy específica, puedo sugerirle escribir a uno de nuestros asesores al correo marcapais@procomer.com﻿';
+                        vm.response = 'Disculpe. No entendí su pregunta ¿Podría redactarla distinto? Si es una pregunta muy específica, puedo sugerirle escribir a uno de nuestros asesores al correo marcapais@procomer.com﻿';
                         vm.responseConfidence = 0;
                     } else {
                         // quite sure
