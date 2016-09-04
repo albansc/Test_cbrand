@@ -29,7 +29,7 @@
     margin: 24px;
     border-radius: 0;
     font-family: "angelina";
-    margin: 48px; }
+    font-size: 40px;}
     .content .question-wrapper form {
       margin: 0; }
     .content .question-wrapper input, .content .question-wrapper p {
@@ -39,7 +39,7 @@
       font-size: 24px;
       color: #fff; }
       .content .question-wrapper input:hover, .content .question-wrapper input:active, .content .question-wrapper input:focus, .content .question-wrapper p:hover, .content .question-wrapper p:active, .content .question-wrapper p:focus {
-        border: blue;
+        border: #fff;
         outline: none; }
   .content div.logo {
     text-align: center; }

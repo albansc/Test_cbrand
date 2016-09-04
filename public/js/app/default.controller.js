@@ -6,7 +6,7 @@
         var vm = this;
         vm.options = [];
         vm.sending = 0;
-        vm.response = '¡Hola! Soy Esencia, estoy para responder tus dudas sobre Esencial Costa Rica. Puedo responderle sobre la historia, descripción, usos, licencimiento y estructura organizacional de la marca país.';
+        vm.response = '¡Hola! Soy Esencia, y estoy para responder sus dudas sobre Esencial Costa Rica. Puedo responderle sobre la historia, descripción, usos, licencimiento y estructura organizacional de la marca país.';
 
         vm.classify = classifyText;
         vm.add = addItem;
