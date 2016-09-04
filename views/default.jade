@@ -3,8 +3,9 @@ extends ./layout.jade
 
 block content
   div.content(ng-controller="defaultCtrl as def")
-    background: url("images/background.png") no-repeat
+    background(src="images/background.png") 
     div.row
+      background(src="images/background.png") 
       img(src="images/background.png", width="500")
       div.col.col-sm-6.esencia
         img(src="images/logo_esencial.png", width="200")
