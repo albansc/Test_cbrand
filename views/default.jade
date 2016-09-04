@@ -5,19 +5,21 @@ block content
   div.content(ng-controller="defaultCtrl as def")
     background(src="images/background.png") 
     div.row
-      background(src="images/background.png") 
-      img(src="images/background.png", width="500")
+      //
+        background(src="images/background.png") 
+        img(src="images/background.png", width="500")
       div.col.col-sm-6.esencia
-        img(src="images/logo_esencial.png", width="200")
+        img(src="images/logo_esencial.png", width="400")
       div.col.col-sm-6
         div.response-wrapper
-          p.response(ng-show="def.sending === 1") Pensando...
+          p.response(ng-show="def.sending === 1") Pensando la mejor respuesta a su pregunta...
           p.response(ng-show="def.sending === 0")
             //
               span
               	strong Esencia ({{def.responseConfidence}}%): 
             span(ng-bind-html="def.response")
-        div.logo
+        //
+          div.logo
           img(src="images/logo.svg", width="300")
     div.row
       div.col.col-sm-12.question-wrapper
@@ -26,7 +28,7 @@ block content
         div(ng-show="def.sending === 1")
           p Enviando...
         div(ng-show="def.sending === 2")
-          p(ng-click="def.sending=0") ¡Ups! Ha ocurrido un problema... Da clic aquí para reintentar.
+          p(ng-click="def.sending=0") Lo siento. Ha ocurrido un problema. Por favor, inténtelo de nuevo.
     button(ng-click="admin=!admin") Consola administrativa
     div.admin(ng-show="admin")
       h2 Admin Screen

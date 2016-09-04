@@ -1,14 +1,15 @@
 .content {
   max-width: 960px;
-  margin: 6px auto; }
+  margin: 6px auto; 
+  background: url('/images/background.png') no-repeat center center fixed}
   .content .esencia {
     text-align: center; }
   .content .response-wrapper {
     background: #63A70A;
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 24px;
-    margin: 24px;
+    margin: 48px;
     min-height: 200px; }
     .content .response-wrapper p {
       color: #fff;
