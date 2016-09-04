@@ -17,7 +17,7 @@ block content
     div.row
       div.col.col-sm-4.esencia
         img(src="images/logo_esencial.png", width="400")
-      div.col.col-sm-6
+      div.col.col-sm-8
         div.response-wrapper
           p.response(ng-show="def.sending === 1") Pensando la mejor respuesta a su pregunta...
           p.response(ng-show="def.sending === 0")
@@ -59,6 +59,4 @@ block content
           label.col-xs-2.col-form-label(for="answer") Respuesta
           div.col-xs-10
             div(text-angular="text-angular", name="answer", ng-model="def.newItem.answer")
-            
-        
-        button(type="submit").btn.btn-primary Añadir
+            button(type="submit").btn.btn-primary Añadir
