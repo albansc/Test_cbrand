@@ -28,7 +28,7 @@
     padding: 24px;
     margin: 24px;
     border-radius: 0;
-    font-family: angelina
+    font-family: "angelina";
     margin: 48px; }
     .content .question-wrapper form {
       margin: 0; }
@@ -46,9 +46,12 @@
     .content div.logo img {
       margin: 25 auto 0; }
 
-@font-face {
-    font-family: angelina;
-    src: url("/fonts/angelina.TTF") ;
+	@font-face {
+    	font-family: "angelina";
+    	src: url("/fonts/angelina.TTF");
+	}
+.customfont { 
+    font-family: "angelina";
 }
 
 .footer {
