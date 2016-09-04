@@ -45,6 +45,11 @@
     .content div.logo img {
       margin: 25 auto 0; }
 
+@font-face {
+    font-family: angelina;
+    src: url("/fonts/angelina.TTF") ;
+}
+
 .footer {
   position: fixed;
   bottom: 4px;
