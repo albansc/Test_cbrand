@@ -5,21 +5,7 @@ block content
   div.content(ng-controller="defaultCtrl as def")
     background(src="images/background.png") 
 
-    div.row
-      div.col.col-sm-12.panel.carrusel
-        #myCarousel.carousel.slide(data-ride='carousel')
-        // Wrapper for slides
-        .carousel-inner(role='listbox')
-          .item.active
-            img(src="images/background.png", alt='Chania', width='460', height='345')
-          .item
-            img(src="images/back_green.png", alt='Chania', width='460', height='345')
-          .item
-            img(src='img_flower.jpg', alt='Flower', width='460', height='345')
-          .item
-            img(src='img_flower2.jpg', alt='Flower', width='460', height='345')
- 
-   
+  
    div.row
       div.col.col-sm-10.question-wrapper
         form(ng-show="def.sending === 0", ng-submit="def.classify()")
@@ -43,8 +29,23 @@ block content
         //
           div.logo
           img(src="images/logo.svg", width="300")
-
-    button(ng-click="admin=!admin") Consola administrativa
+    
+    div.row
+      div.col.col-sm-12.panel.carrusel
+        #myCarousel.carousel.slide(data-ride='carousel')
+        // Wrapper for slides
+        .carousel-inner(role='listbox')
+          .item.active
+            img(src="images/background.png", alt='Chania', width='460', height='345')
+          .item
+            img(src="images/back_green.png", alt='Chania', width='460', height='345')
+          .item
+            img(src='img_flower.jpg', alt='Flower', width='460', height='345')
+          .item
+            img(src='img_flower2.jpg', alt='Flower', width='460', height='345')
+   
+   
+   button(ng-click="admin=!admin") Consola administrativa
     div.admin(ng-show="admin")
       h2 Admin Screen
       table.table
