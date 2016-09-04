@@ -1,17 +1,12 @@
 extends ./layout.jade
 
-    style.
-      .carousel-inner > .item > img,
-      .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
 
 block content
   div.content(ng-controller="defaultCtrl as def")
     background(src="images/background.png") 
 
     div.row
-      div.col.col-sm-12.panel
+      div.col.col-sm-12.panel.carrusel
         #myCarousel.carousel.slide(data-ride='carousel')
         // Wrapper for slides
         .carousel-inner(role='listbox')
@@ -26,7 +21,7 @@ block content
  
    
    div.row
-      div.col.col-sm-12.question-wrapper
+      div.col.col-sm-10.question-wrapper
         form(ng-show="def.sending === 0", ng-submit="def.classify()")
           input.question#question(ng-model="def.text",placeholder="¡Pregúntale a Esencia!")
         div(ng-show="def.sending === 1")
@@ -35,10 +30,7 @@ block content
           p(ng-click="def.sending=0") Lo siento. Ha ocurrido un problema. Por favor, inténtelo de nuevo.
 
     div.row
-      //
-        background(src="images/background.png") 
-        img(src="images/background.png", width="500")
-      div.col.col-sm-6.esencia
+      div.col.col-sm-4.esencia
         img(src="images/logo_esencial.png", width="400")
       div.col.col-sm-6
         div.response-wrapper
