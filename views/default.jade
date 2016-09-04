@@ -4,6 +4,16 @@ extends ./layout.jade
 block content
   div.content(ng-controller="defaultCtrl as def")
     background(src="images/background.png") 
+
+    div.row
+      div.col.col-sm-12.question-wrapper
+        form(ng-show="def.sending === 0", ng-submit="def.classify()")
+          input.question#question(ng-model="def.text",placeholder="¡Pregúntale a Esencia!")
+        div(ng-show="def.sending === 1")
+          p Enviando...
+        div(ng-show="def.sending === 2")
+          p(ng-click="def.sending=0") Lo siento. Ha ocurrido un problema. Por favor, inténtelo de nuevo.
+
     div.row
       //
         background(src="images/background.png") 
@@ -21,14 +31,7 @@ block content
         //
           div.logo
           img(src="images/logo.svg", width="300")
-    div.row
-      div.col.col-sm-12.question-wrapper
-        form(ng-show="def.sending === 0", ng-submit="def.classify()")
-          input.question#question(ng-model="def.text",placeholder="¡Pregúntale a Esencia!")
-        div(ng-show="def.sending === 1")
-          p Enviando...
-        div(ng-show="def.sending === 2")
-          p(ng-click="def.sending=0") Lo siento. Ha ocurrido un problema. Por favor, inténtelo de nuevo.
+
     button(ng-click="admin=!admin") Consola administrativa
     div.admin(ng-show="admin")
       h2 Admin Screen
