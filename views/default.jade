@@ -1,11 +1,31 @@
 extends ./layout.jade
 
+    style.
+      .carousel-inner > .item > img,
+      .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
 
 block content
   div.content(ng-controller="defaultCtrl as def")
     background(src="images/background.png") 
 
     div.row
+      div.col.col-sm-12.panel
+        #myCarousel.carousel.slide(data-ride='carousel')
+        // Wrapper for slides
+        .carousel-inner(role='listbox')
+          .item.active
+            img(src="images/background.png", alt='Chania', width='460', height='345')
+          .item
+            img(src="images/back_green.png", alt='Chania', width='460', height='345')
+          .item
+            img(src='img_flower.jpg', alt='Flower', width='460', height='345')
+          .item
+            img(src='img_flower2.jpg', alt='Flower', width='460', height='345')
+ 
+   
+   div.row
       div.col.col-sm-12.question-wrapper
         form(ng-show="def.sending === 0", ng-submit="def.classify()")
           input.question#question(ng-model="def.text",placeholder="¡Pregúntale a Esencia!")
