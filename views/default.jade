@@ -6,7 +6,7 @@ block content
     background(src="images/background.png") 
   
     div.row
-      div.col.col-sm-10.question-wrapper
+      div.col.col-sm-12.question-wrapper
         form(ng-show="def.sending === 0", ng-submit="def.classify()")
           input.question#question(ng-model="def.text",placeholder="¡Pregúntale a Esencia!")
         div(ng-show="def.sending === 1")
