@@ -7,14 +7,6 @@
     background-image: url("/images/back_green.png");
 }
   	
- html { 
-	background: url('/public/images/back_green.png') no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
- }
- 
   
   .content .esencia {
     text-align: center; }
@@ -43,7 +35,7 @@
       font-size: 24px;
       color: #fff; }
       .content .question-wrapper input:hover, .content .question-wrapper input:active, .content .question-wrapper input:focus, .content .question-wrapper p:hover, .content .question-wrapper p:active, .content .question-wrapper p:focus {
-        border: none;
+        border: blue;
         outline: none; }
   .content div.logo {
     text-align: center; }
