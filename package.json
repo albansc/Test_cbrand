@@ -15,7 +15,9 @@
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "lint": "jshint .",
+    "validate": "npm ls"
   },
   "dependencies": {
     "async": "^2.0.1",
@@ -36,6 +38,7 @@
     "extend": "^3.0.0",
     "helmet": "^2.1.2",
     "jade": "^1.11.0",
+    "uuid": "^2.0.2",
     "validator": "^5.5.0",
     "watson-developer-cloud": "^1.12.4"
   },

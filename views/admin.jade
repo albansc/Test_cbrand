@@ -1,0 +1,33 @@
+extends ./layout.jade
+
+
+block content
+  div.content(ng-controller="adminCtrl as def")
+    div.admin
+        h2 Admin Screen
+        table.table
+            thead
+                tr
+                td Id
+                td Texto
+                td 
+            tbody
+                tr(ng-repeat="item in def.options track by $index")
+                    td {{item.id}}
+                    td 
+                        div(ng-show="item.answer", ng-bind-html="item.answer")
+                        div(ng-show="!item.answer") 
+                        a(ng-click="def.get($index)", href="") Mostrar respuesta
+                    td 
+                        button(ng-click="def.delete($index)") Remover
+        hr
+        form(ng-submit="def.add()")
+        div.form-group.row
+            label.col-xs-2.col-form-label(for="id") Id
+            div.col-xs-10
+            input.form-control(id="id", placeholder="Id", ng-model="def.newItem.id", required)
+        div.form-group.row
+            label.col-xs-2.col-form-label(for="answer") Respuesta
+            div.col-xs-10
+            div(text-angular="text-angular", name="answer", ng-model="def.newItem.answer")
+            button(type="submit").btn.btn-primary Añadir

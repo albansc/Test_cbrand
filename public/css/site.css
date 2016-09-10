@@ -1,64 +1,80 @@
+@font-face {
+  font-family: "angelina";
+  src: url("/fonts/angelina.TTF"); }
+
+.body-wrapper {
+  max-width: 740px;
+  margin: 32px auto; }
+
+body {
+  background: url("/images/back_green.png");
+  background-size: 100%;
+  background-position: center; }
+
 .content {
-  max-width: 960px;
   margin: 6px auto; }
-  
-  body {
-    background: url("/images/back_green.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-    }
-  	
-  
+  .content #esencialLogo {
+    width: 150px;
+    margin: 0; }
+  .content .left-padded {
+    margin-left: 150px; }
   .content .esencia {
     text-align: center; }
+  .content .rotador {
+    margin: 0 0 48px 0; }
+    .content .rotador ul {
+      width: 100%;
+      height: 100px;
+      margin: 0 auto; }
   .content .response-wrapper {
-    background: #63A70A;
-    max-width: 600px;
+    background: url("/images/bg.png");
     margin: 0 auto;
     padding: 24px;
-    margin: 48px;
-    min-height: 400px; }
+    margin: 24px 0;
+    min-height: 150px; }
     .content .response-wrapper p {
       color: #fff;
       font-size: 14px; }
   .content .question-wrapper {
-    background: #63A70A;
+    background: url("/images/bg.png");
     padding: 24px;
-    margin: 24px;
-    border-radius: 0;
-    font-family: "angelina";
-    font-size: 40px;}
+    border-radius: 0px; }
     .content .question-wrapper form {
       margin: 0; }
-    .content .question-wrapper input, .content .question-wrapper p {
+    .content .question-wrapper .question {
+      font-family: "angelina";
       background: transparent;
       border: none;
       width: 100%;
-      font-size: 40px;
+      font-size: 24px;
       color: #fff; }
-      .content .question-wrapper input:hover, .content .question-wrapper input:active, .content .question-wrapper input:focus, .content .question-wrapper p:hover, .content .question-wrapper p:active, .content .question-wrapper p:focus {
-        border: 1px;
-        outline: #fff; }
+      .content .question-wrapper .question:hover, .content .question-wrapper .question:active, .content .question-wrapper .question:focus {
+        border: #fff;
+        outline: none; }
   .content div.logo {
     text-align: center; }
     .content div.logo img {
       margin: 25 auto 0; }
 
-	@font-face {
-    	font-family: "angelina";
-    	src: url("/fonts/angelina.TTF");
-	}
-.customfont { 
-    font-family: "angelina";
-}
-
 .footer {
   position: fixed;
-  bottom: 4px;
-  right: 4px;
-  text-align: right; }
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  width: 100%;
+  background: #0d8544;
+  padding: 6px; }
+  .footer a {
+    color: #fff;
+    text-decoration: underline; }
+    .footer a:hover {
+      color: #fff; }
 
 div.content.ng-scope > div.admin div.ta-scroll-window.ng-scope.ta-text.ta-editor.form-control {
   height: auto; }
+
+@media screen and (max-width: 560px) {
+  .content .left-padded {
+    margin-left: 0; }
+  .content .rotador {
+    margin-top: 12px; } }

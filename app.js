@@ -6,7 +6,7 @@ var app = express();
 var watson = require('watson-developer-cloud');
 var config = require('config');
 var Cloudant = require('cloudant');
-
+var uuid = require('uuid');
 
 // Bootstrap application settings
 require('./config/express')(app);
@@ -22,9 +22,13 @@ var natural_language_classifier = watson.natural_language_classifier({
 var cloudant = Cloudant({ account: config.get('Cloudant.username'), password: config.get('Cloudant.password') });
 var db = cloudant.db.use('esencia');
 
+var cuestionLogger = cloudant.db.use('esencia-log');
 
 app.get('/', function (req, res) {
   res.render('default');
+});
+app.get('/admin', function (req, res) {
+  res.render('admin');
 });
 
 app.get('/api/classify/:text', function (req, res) {
@@ -36,11 +40,11 @@ app.get('/api/classify/:text', function (req, res) {
     function (err, response) {
       if (err) {
         console.log('error:', err);
-        res.status(400).json(err);
+        return res.status(400).json(err);
       }
       else {
-        console.log(JSON.stringify(response, null, 2));
-        res.json(response);
+        logQuestion(text, response);
+        return res.json(response);
       }
     });
 });
@@ -58,10 +62,16 @@ app.get('/api/answers/:id', function (req, res) {
   db.get(req.params.id, cb.bind({ res: res }));
 });
 
+function logQuestion(question, response){
+  var id = uuid.v4();
+  cuestionLogger.insert({ '_id': id, 'question': question,'response':response, 'created': new Date().getTime() }, function(err, data){
+    if(err){
+      console.log("Error:", err);
+    }
+  });
+}
 function cb(err, data) {
   var that = this;
-  console.log("Error:", err);
-  console.log("Data:", data);
   if (!err)
     that.res.status(200).json(data);
   else

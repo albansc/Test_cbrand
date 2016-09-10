@@ -1,7 +1,7 @@
 'use strict';
 
 (function(){
-    angular.module('esencia', ['textAngular']);
+    angular.module('esencia', ['textAngular','angular-carousel']);
 /* function getClassifiers() {
   return $.get('/api/classifiers');
 };

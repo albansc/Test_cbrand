@@ -4,7 +4,7 @@
 require('dotenv').config({silent: true});
 
 var server = require('./app');
-var port = process.env.PORT || process.env.VCAP_APP_PORT || 3000;
+var port = process.env.PORT || process.env.VCAP_APP_PORT || 3009;
 
 server.listen(port, function() {
   console.log('Servidor corriendo en: %d', port);

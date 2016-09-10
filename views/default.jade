@@ -3,58 +3,36 @@ extends ./layout.jade
 
 block content
   div.content(ng-controller="defaultCtrl as def")
-    background(src="images/background.png") 
+     
   
-    div.row
-      div.col.col-sm-12.question-wrapper
+    div
+      img#esencialLogo(src="images/logo_esencial.png")
+
+    div.left-padded
+      div.rotador
+        ul.image(rn-carousel="",rn-carousel-auto-slide="")
+          li(ng-repeat="image in def.bannerImages")
+            img(ng-src="{{image}}")
+
+      div.question-wrapper
+        div.bg
         form(ng-show="def.sending === 0", ng-submit="def.classify()")
           input.question#question(ng-model="def.text",placeholder="¡Pregúntele a Esencia!")
         div(ng-show="def.sending === 1")
-          p Enviando...
+          p.question Enviando...
         div(ng-show="def.sending === 2")
-          p(ng-click="def.sending=0") Lo siento. Ha ocurrido un problema. Por favor, inténtelo de nuevo.
+          p.question(ng-click="def.sending=0") Lo siento. Ha ocurrido un problema. Por favor, inténtelo de nuevo.
 
-    div.row
-      div.col.col-sm-4.esencia
-        img(src="images/logo_esencial.png", width="400")
-      div.col.col-sm-8
-        div.response-wrapper
-          p.response(ng-show="def.sending === 1") Pensando la mejor respuesta a su pregunta...
-          p.response(ng-show="def.sending === 0")
-            //
-              span
-              	strong Esencia ({{def.responseConfidence}}%): 
-            span(ng-bind-html="def.response")
-        //
-          div.logo
-          img(src="images/logo.svg", width="300")
+      div.response-wrapper
+        p.response(ng-show="def.sending === 1") 
+          span Pensando la mejor respuesta a su pregunta...
+        p.response(ng-show="def.sending === 0")
+          //
+            span
+              strong Esencia ({{def.responseConfidence}}%): 
+          span(ng-bind-html="def.response")
+      //
+        div.logo
+        img(src="images/logo.svg", width="300")
            
-    button(ng-click="admin=!admin") Consola administrativa
-    div.admin(ng-show="admin")
-      h2 Admin Screen
-      table.table
-        thead
-          tr
-            td Id
-            td Texto
-            td 
-        tbody
-          tr(ng-repeat="item in def.options  track by $index")
-            td {{item.id}}
-            td 
-              div(ng-show="item.answer", ng-bind-html="item.answer")
-              div(ng-show="!item.answer") 
-                a(ng-click="def.get($index)", href="") Mostrar respuesta
-            td 
-              button(ng-click="def.delete($index)") Remover
-      hr
-      form(ng-submit="def.add()")
-        div.form-group.row
-          label.col-xs-2.col-form-label(for="id") Id
-          div.col-xs-10
-            input.form-control(id="id", placeholder="Id", ng-model="def.newItem.id", required)
-        div.form-group.row
-          label.col-xs-2.col-form-label(for="answer") Respuesta
-          div.col-xs-10
-            div(text-angular="text-angular", name="answer", ng-model="def.newItem.answer")
-            button(type="submit").btn.btn-primary Añadir
+    

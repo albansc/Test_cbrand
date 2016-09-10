@@ -1,12 +1,21 @@
 'use strict';
 (function () {
     angular.module('esencia').controller('defaultCtrl', defaultCtrl);
-    defaultCtrl.$inject = ['$http'];
-    function defaultCtrl($http) {
+    defaultCtrl.$inject = ['$http','$timeout'];
+    function defaultCtrl($http, $timeout) {
         var vm = this;
+        var defaultResponse='¡Hola! Soy Esencia, y estoy para responder sus dudas sobre Esencial Costa Rica. Puedo responderle sobre la historia, descripción, usos, licencimiento y estructura organizacional de la marca país.';
         vm.options = [];
         vm.sending = 0;
-        vm.response = '¡Hola! Soy Esencia, y estoy para responder sus dudas sobre Esencial Costa Rica. Puedo responderle sobre la historia, descripción, usos, licencimiento y estructura organizacional de la marca país.';
+        vm.response = defaultResponse;
+        vm.bannerImages = [
+            '/images/banner/imagen-1.png',
+            '/images/banner/imagen-2.png',
+            '/images/banner/imagen-3.png',
+            '/images/banner/imagen-4.png',
+            '/images/banner/imagen-5.png',
+            '/images/banner/imagen-6.png'
+        ];
 
         vm.classify = classifyText;
         vm.add = addItem;
@@ -74,7 +83,9 @@
                             var confidence = Math.ceil(res.data.classes[0].confidence * 100);
                             console.log(confidence);
                             vm.responseConfidence = confidence;
-
+                            $timeout(function(){
+                                vm.response=defaultResponse;
+                            }, 60000);
                         }, function (err) {
                             //console.log('respuesta no encontrada');
                             vm.response = 'No tengo la información para contestar esa pregunta. Si es una pregunta muy específica, puedo sugerirle escribir a uno de nuestros asesores al correo marcapais@procomer.com';
