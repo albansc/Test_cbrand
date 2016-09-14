@@ -13,13 +13,18 @@ require('./config/express')(app);
 
 // Create the service wrapper
 var classifierId = process.env.classifierId ? process.env.classifierId : config.get('NLC.classifierId');
+console.log(process.env.classifierId);
+
 var natural_language_classifier = watson.natural_language_classifier({
   url: 'https://gateway.watsonplatform.net/natural-language-classifier/api',
-  username: config.get('NLC.username'),
-  password: config.get('NLC.password'),
+  username: process.env.classifierUsername ? process.env.classifierUsername : config.get('NLC.username'),
+  password: process.env.classifierPassword ? process.env.classifierPassword : config.get('NLC.password'),
   version: 'v1'
 });
-var cloudant = Cloudant({ account: config.get('Cloudant.username'), password: config.get('Cloudant.password') });
+var cloudant = Cloudant({
+  account: process.env.cloudantUsername ? process.env.cloudantUsername : config.get('Cloudant.username'),
+  password: process.env.cloudantPassword ? process.env.cloudantPassword : config.get('Cloudant.password')
+});
 var db = cloudant.db.use('esencia');
 
 var cuestionLogger = cloudant.db.use('esencia-log');
@@ -62,10 +67,10 @@ app.get('/api/answers/:id', function (req, res) {
   db.get(req.params.id, cb.bind({ res: res }));
 });
 
-function logQuestion(question, response){
+function logQuestion(question, response) {
   var id = uuid.v4();
-  cuestionLogger.insert({ '_id': id, 'question': question,'response':response, 'created': new Date().getTime() }, function(err, data){
-    if(err){
+  cuestionLogger.insert({ '_id': id, 'question': question, 'response': response, 'created': new Date().getTime() }, function (err, data) {
+    if (err) {
       console.log("Error:", err);
     }
   });
